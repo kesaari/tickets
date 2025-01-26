@@ -1,14 +1,15 @@
-import React, {useEffect} from "react";
+import {useEffect} from "react";
 import { Card } from '../TicketCard/TicketCard';
 import { fetchID, fetchTickets, showMoreTicket } from '../../store/TicketSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import styles from "./search.module.css";
 import { FilterButtons } from '../FilterButtons/FiltersButtons';
-import { TicketsState } from 'C:/Users/alisa/Desktop/учебка/ticketsApp/src/types/types.ts';
+import { TicketsState } from '../../types/types';
+import { AppDispatch } from '../../store/index';
 
 export const Search = () => {
 
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<AppDispatch>();
   const { tickets, searchId, stop, checkboxes, ticketsToShow } = useSelector((state: { tickets: TicketsState }) => state.tickets);
   const activeFilters = checkboxes.filter(filter => filter.checked && filter.id !== 'all').map(filter => filter.id);
 

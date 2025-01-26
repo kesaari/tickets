@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./TicketCard.module.css";
-import { Ticket } from 'C:/Users/alisa/Desktop/учебка/ticketsApp/src/types/types.ts';
+import { Ticket } from '../../types/types';
 
 export const Card: React.FC<{ ticket: Ticket }> = ({ ticket }) => {
     const { price, carrier, segments } = ticket;

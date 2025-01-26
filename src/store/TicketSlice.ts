@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit';
 import axios from 'axios';
-import { TicketsState } from '../types/types';
+import { TicketsState, Checkbox } from '../types/types';
 
 export const fetchID = createAsyncThunk('tickets/fetchSearchId', async () => {
   const response = await axios.get('https://aviasales-test-api.kata.academy/search');
@@ -39,15 +39,15 @@ const initialState: TicketsState = {
       showMoreTicket(state) {
         state.ticketsToShow += 5;
       },
-      toggleFilter: (state, action) => {
-      const filter = state.checkboxes.find(filter => filter.id === action.payload);
-      if (filter) {
-        filter.checked = !filter.checked;
-        if (filter.id === 'all') {
-          state.checkboxes.forEach(f => (f.id !== 'all' ? (f.checked = filter.checked) : null));
-        } else {
-          const allChecked = state.checkboxes.every(f => (f.id !== 'all' ? f.checked : true));
-          state.checkboxes.find(f => f.id === 'all').checked = allChecked;
+      toggleFilter: (state, action: PayloadAction<string>) => {
+        const filter = state.checkboxes.find((filter: Checkbox) => filter.id === action.payload);
+        if (filter) {
+          filter.checked = !filter.checked;
+          if (filter.id === 'all') {
+            state.checkboxes.forEach((f: Checkbox) => (f.id !== 'all' ? (f.checked = filter.checked) : null));
+          } else {
+            const allChecked = state.checkboxes.every((f: Checkbox) => (f.id !== 'all' ? f.checked : true));
+            state.checkboxes.find((f: Checkbox) => f.id === 'all')!.checked = allChecked;
           }
         }
       },

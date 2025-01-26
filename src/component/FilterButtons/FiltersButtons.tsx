@@ -1,8 +1,8 @@
 import React from "react";
 import styles from "./Filters.module.css";
 import { useDispatch, useSelector } from 'react-redux';
-import { setActiveFilterButton, sortTicketsByPrice, sortTicketsByDuration, sortTicketsByOptimal } from "C:/Users/alisa/Desktop/учебка/ticketsApp/src/store/TicketSlice.ts";
-import { TicketsState, FilterButton } from 'C:/Users/alisa/Desktop/учебка/ticketsApp/src/types/types.ts';
+import { setActiveFilterButton, sortTicketsByPrice, sortTicketsByDuration, sortTicketsByOptimal } from "../../store/TicketSlice";
+import { TicketsState, FilterButton } from '../../types/types';
 
 export const FilterButtons: React.FC = () => {
   const dispatch = useDispatch();

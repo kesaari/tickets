@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { toggleFilter } from '../../store/TicketSlice';
 import styles from "./Checkboxes.module.css";
-import { TicketsState, Checkbox } from 'C:/Users/alisa/Desktop/учебка/ticketsApp/src/types/types.ts';
+import { TicketsState, Checkbox } from '../../types/types';
 
 export const Checkboxes = () => {
   const checkboxes = useSelector((state: {tickets: TicketsState}) => state.tickets.checkboxes);
