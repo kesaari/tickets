@@ -13,3 +13,7 @@
   font-size: 13px;
   height: 250px;
 }
+
+label {
+  cursor: pointer;
+}

@@ -8,6 +8,7 @@ button {
     height: 50px;
     width: 170px;
     border: 1px solid rgba(160, 176, 185, 1);
+    cursor: pointer;
 }
 
 .active {
