@@ -1,9 +1,13 @@
 import React from 'react'
 import styles from './TicketCard.module.css'
-import { TicketProps } from '../../types/types'
+import { Ticket } from '../../types/types'
 import { formatDate, getStopsWord } from '../../utilites/utilites'
 
-export const Card: React.FC<TicketProps> = ({ ticket }) => {
+interface Props {
+  ticket: Ticket;
+}
+
+export const Card: React.FC<Props> = ({ ticket }) => {
   const { price, carrier, segments } = ticket
 
   return (

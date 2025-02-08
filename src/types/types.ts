@@ -33,10 +33,6 @@ export interface Ticket {
     checkboxes: Checkbox[];
   }
 
-  export interface TicketProps {
-    ticket: Ticket;
-  }
-
   export const CHECKBOX_ID = {
     ALL: 'all',
     NO_STOPS: 'no_stops',
